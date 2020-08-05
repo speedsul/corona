@@ -1,14 +1,25 @@
-import React, { memo } from 'react';
-
-import { Container } from './styles';
+import React, { memo, useCallback, useState, useEffect } from 'react'
+import Api from '../../services/api'
+import { ContainerStyled } from './styles'
+import Board from './components/Board.jsx'
 
 const Main = () => {
+  const [data, setData] = useState({})
+  const [country, setCountry] = useState('brazil')
+
+  const getCovidData = useCallback((country) => {
+    Api.getCountry(country).then((data) => setData(data))
+  }, [])
+  useEffect(() => {
+    getCovidData(country)
+  }, [getCovidData, country])
 
   return (
-    <Container>
-      <h1>Main</h1>
-    </Container>
-  );
-};
+    <ContainerStyled>
+      <div className="mb-2"></div>
+      <Board data={data} />
+    </ContainerStyled>
+  )
+}
 
-export default memo(Main);
+export default memo(Main)

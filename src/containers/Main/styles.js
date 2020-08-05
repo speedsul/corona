@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-
+export const ContainerStyled = styled.div`
+padding: 20px;
+margin: 0 auto;
+max-width: 1024px;
 `;
