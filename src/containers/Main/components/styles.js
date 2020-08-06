@@ -17,6 +17,15 @@ export const CardPanelContentStyled = styled(CardContent)`
   display: flex;
   justify-content: space-between;
   padding: 25px;
+  & img {
+    width: 30px;
+    height: 30px;
+  }
+  & .select-coutry {
+    min-width: 300px;
+  }
+  & .label {
+  }
 `
 export const ItemStyled = styled.div`
   display: flex;
