@@ -11,6 +11,12 @@ export const ValueStyled = styled(Typography)`
 `
 export const CardContentStyled = styled(CardContent)`
   border-left: 8px solid ${({ color }) => color || '#5d78ff'};
+  & .label {
+    color: #02182b;
+    background: yellow;
+    display: flex;
+    width: 100%;
+  }
 `
 
 export const CardPanelContentStyled = styled(CardContent)`

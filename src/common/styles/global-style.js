@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components"
-import CovidImg from "../../assets/images/covid.png"
+import { createGlobalStyle } from 'styled-components'
+import CovidImg from '../../assets/images/covid.png'
 
 const GlobalStyle = createGlobalStyle`
 * {outline: none;
@@ -32,6 +32,10 @@ html, body {
 }
 .cursor {
     cursor: pointer;
+}
+.primary {
+    background: green;
+    color: red;
 }
 `
 

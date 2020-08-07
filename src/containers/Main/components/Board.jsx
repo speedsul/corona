@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import Card from './Card'
 import { Grid, Skeleton } from '../../../components'
 
@@ -17,7 +17,7 @@ const Board = ({ data }) => {
       <Grid item xs={12} md={3}>
         <Card
           value={getValue(todayDeaths)}
-          label="Hobitos Hoje"
+          label="Óbitos Hoje"
           color="#f7b829"
         />
       </Grid>

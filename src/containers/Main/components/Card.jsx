@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { Card as CardUI } from '../../../components'
 import { LabelStyled, ValueStyled, CardContentStyled } from './styles'
 
@@ -8,7 +8,7 @@ const Card = ({ value, label, color }) => {
     <CardUI>
       <CardContentStyled color={color}>
         <ValueStyled>{value}</ValueStyled>
-        <LabelStyled>{label}</LabelStyled>
+        <LabelStyled className="label">{label}</LabelStyled>
       </CardContentStyled>
     </CardUI>
   )
