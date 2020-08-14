@@ -1,25 +1,25 @@
 import React, { memo, useCallback, useState, useEffect } from 'react'
-import Api from '../../services/api'
+import { getCity } from '../../services/api'
 import { ContainerStyled } from './styles'
 import Board from './components/Board'
 import Panel from './components/Panel'
 
-const Main = () => {
+const City = () => {
   const [data, setData] = useState({})
-  const [country, setCountry] = useState('brazil')
-  const updateAt = new Date().toLocaleString()
+  const [city, setCity] = useState({'RS'})
 
-  const getCovidData = useCallback(country => {
-    Api.getCountry(country).then(data => setData(data))
+
+  const getCovidCity = useCallback(city => {
+    getCity(city).then(resp => setData(resp))
   }, [])
-
   useEffect(() => {
-    getCovidData(country)
-  }, [getCovidData, country])
+    getCovidCity(city)
+    console.log(city)
+  }, [getCovidCity, city])
 
   const handleChange = ({ target }) => {
-    const country = target.value
-    setCountry(country)
+    const city = target.value
+    setCity(city)
   }
 
   return (
@@ -38,4 +38,4 @@ const Main = () => {
   )
 }
 
-export default memo(Main)
+export default memo(City)

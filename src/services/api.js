@@ -1,16 +1,16 @@
+import axios from 'axios'
 const path = 'https://coronavirus-19-api.herokuapp.com/countries'
+const pathCities = 'https://brasil.io/api/dataset/covid19/caso/data'
+// 'https://brasil.io/api/dataset/covid19/caso/data?is_last=True&state=AL'
 
-const headers = {
-  method: 'get',
-  mode: 'cors',
-  cache: 'default'
-}
+const getCountry = country =>
+  axios.get(`${path}/${country}`).then(res => res.data)
 
-function getCountry(country) {
-  return fetch(`${path}/${country}`, headers)
-    .then((response) => response.json())
-}
+export const getCity = city =>
+  axios
+    .get(`${pathCities}?is_last=True&state=${city}`)
+    .then(res => res.data.results)
 
 export default {
-    getCountry
+  getCountry,
 }
